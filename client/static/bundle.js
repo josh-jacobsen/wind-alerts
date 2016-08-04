@@ -56,6 +56,8 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	ReactDOM.render(React.createElement(_hello2.default, null), document.getElementById('hello'));
+
 /***/ },
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
@@ -98,7 +100,7 @@
 	        _react2.default.createElement(
 	          'h1',
 	          null,
-	          'So'
+	          'Wh Wh Wh'
 	        )
 	      );
 	    }
@@ -106,8 +108,6 @@
 
 	  return Hello;
 	}(_react2.default.Component);
-
-	_reactDom2.default.render(_react2.default.createElement(Hello, null), document.getElementById('hello'));
 
 /***/ },
 /* 2 */
@@ -21576,8 +21576,6 @@
 
 	  return World;
 	}(_react2.default.Component);
-
-	_reactDom2.default.render(_react2.default.createElement(World, null), document.getElementById('world'));
 
 /***/ }
 /******/ ]);

@@ -1,14 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-class World extends React.Component {
+export default class World extends React.Component {
   render () {
     return (
       <div>
-        <h1>World</h1>
+        <h4>{this.props.message}</h4>
       </div>
     )
   }
 }
-
-ReactDOM.render(<World/>, document.getElementById('world'))
