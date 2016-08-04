@@ -1,16 +1,18 @@
 var path = require('path')
 var webpack = require('webpack')
+// var CopyWebpackPlugin = require('copy-webpack-plugin')
 
 var PATHS = {
-  build: path.join(__dirname, 'client', 'static')
+  build: path.join(__dirname, 'client', 'static'),
+  // html: path.join(__dirname, 'client', 'html')
 }
 
 module.exports = {
-  entry: './main.js',
+  entry: './client/index.js',
   output: {
     path: PATHS.build,
     filename: 'bundle.js',
-    publicPath: '/client/static/' 
+    publicPath: '/client/static/'
     /* the publicPath is used by WDS and has to be in string format (instead of PATHS.build), otherwise WDS won't find it */
   },
   module: {
@@ -25,4 +27,12 @@ module.exports = {
       }
     ]
   },
+//   plugins: [
+//   // Simply copies the files over
+//   new CopyWebpackPlugin([
+//     { from: PATHS.html }, // to: output.path
+//   ]),
+//   // Avoid publishing files when compilation fails
+//   new webpack.NoErrorsPlugin()
+// ],
 }
