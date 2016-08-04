@@ -5,7 +5,7 @@ class Hello extends React.Component {
   render () {
     return (
       <div>
-        <h1>Aw what the fuck. Is this back to. OK, so let me get this right. The webpack entry at publicPath has to be hard coded as a string for it to work properly</h1>
+        <h1>Final check to make sure everything is working</h1>
       </div>
     )
   }

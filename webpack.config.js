@@ -10,7 +10,8 @@ module.exports = {
   output: {
     path: PATHS.build,
     filename: 'bundle.js',
-    publicPath: '/client/static/'
+    publicPath: '/client/static/' 
+    /* the publicPath is used by WDS and has to be in string format (instead of PATHS.build), otherwise WDS won't find it */
   },
   module: {
     loaders: [
