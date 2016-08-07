@@ -35,4 +35,6 @@ module.exports = {
 //   // Avoid publishing files when compilation fails
 //   new webpack.NoErrorsPlugin()
 // ],
+// Create Sourcemaps for the bundle
+  devtool: 'source-map'
 }
