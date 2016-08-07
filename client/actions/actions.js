@@ -1,3 +1,5 @@
+import request from 'superagent'
+
 /*
  * action types
  */
@@ -5,6 +7,8 @@
 export const ADD_TODO = 'ADD_TODO'
 export const TOGGLE_TODO = 'TOGGLE_TODO'
 export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER'
+
+
 
 /*
  * other constants
@@ -31,3 +35,14 @@ export function toggleTodo(index) {
 export function setVisibilityFilter(filter) {
   return { type: SET_VISIBILITY_FILTER, filter }
 }
+
+export function getInitialData() {
+  request
+    .get('https://api.github.com/repos/visionmedia/superagent')
+    .end(function(err, res){
+      console.log(res.body.name)
+    })
+
+}
+
+getInitialData()
