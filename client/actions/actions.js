@@ -8,8 +8,6 @@ export const ADD_TODO = 'ADD_TODO'
 export const TOGGLE_TODO = 'TOGGLE_TODO'
 export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER'
 
-
-
 /*
  * other constants
  */
@@ -36,13 +34,25 @@ export function setVisibilityFilter(filter) {
   return { type: SET_VISIBILITY_FILTER, filter }
 }
 
-export function getInitialData() {
-  request
-    .get('https://api.github.com/repos/visionmedia/superagent')
-    .end(function(err, res){
-      console.log(res.body.name)
-    })
+///////////
 
+export const RECEIVE_INITIAL_WIND = 'RECEIVE_INITIAL_WIND'
+
+const receiveInitialWind = (wind) => {
+  return {
+    type: RECEIVE_INITIAL_WIND,
+    wind: wind
+  }
 }
 
-getInitialData()
+export const getInitialWind = () => {
+  return (dispatch) => {
+    request
+      .get('https://api.github.com/repos/visionmedia/superagent')
+      .end(function(err, res){
+        console.log(res.body.name)
+        dispatch(receiveInitialWind(res.body.name))
+      }
+    )
+  }
+}

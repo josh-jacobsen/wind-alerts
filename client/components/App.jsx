@@ -3,8 +3,8 @@ import React from 'react'
 import Hello from './Hello.jsx'
 import World from './World.jsx'
 
-const hello = "hello world"
-const world = "here I am"
+const hello = "Wind forecast:"
+const world = "Strong"
 
 export default class App extends React.Component {
   render () {
