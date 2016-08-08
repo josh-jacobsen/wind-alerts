@@ -21,6 +21,8 @@
   "dependencies": {
     "babel-core": "^6.11.4",
     "copy-webpack-plugin": "^3.0.1",
+    "dotenv": "^2.0.0",
+    "fs": "0.0.2",
     "path": "^0.12.7",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
