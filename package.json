@@ -17,6 +17,9 @@
   "bugs": {
     "url": "https://github.com/josh-jacobsen/wind-alerts/issues"
   },
+  "browser": {
+    "fs": false
+  },
   "homepage": "https://github.com/josh-jacobsen/wind-alerts#readme",
   "dependencies": {
     "babel-core": "^6.11.4",

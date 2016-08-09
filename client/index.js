@@ -1,10 +1,8 @@
-// require('dotenv').config();
 
 // console.log(process.env.API_ACESSS_TOKEN);
 import React from 'react'
 import ReactDOM from 'react-dom'
 import thunk from 'redux-thunk'
-
 import { createStore, applyMiddleware, compose } from 'redux'
 
 import todoApp from './reducers/index.js'

@@ -1,7 +1,10 @@
 
 
 import request from 'superagent'
+import { APPID } from '../../api.js'
 
+let url = 'http://api.openweathermap.org/data/2.5/weather'
+let city = '2193734'
 /*
  * action types
  */
@@ -50,10 +53,13 @@ const receiveInitialWind = (wind) => {
 export const getInitialWind = () => {
   return (dispatch) => {
     request
-      .get('https://api.github.com/repos/visionmedia/superagent')
+      .get(url)
+      .query({ APPID: APPID, id: city})
+      // .set('APPID', '74087aaf7351be005cd489b6bc60bfd3')
+      // .set('id', '2193734')
       .end(function(err, res){
-        console.log(res.body.name)
-        dispatch(receiveInitialWind(res.body.name))
+        console.log(res.body.wind)
+        dispatch(receiveInitialWind(res.body.wind))
       }
     )
   }

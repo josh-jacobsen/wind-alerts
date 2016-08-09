@@ -1,6 +1,10 @@
 var path = require('path')
 var webpack = require('webpack')
 // var CopyWebpackPlugin = require('copy-webpack-plugin')
+var fs = require('fs')
+
+
+
 
 var PATHS = {
   build: path.join(__dirname, 'client', 'static'),
@@ -26,6 +30,9 @@ module.exports = {
         }
       }
     ]
+  },
+  node: {
+  fs: "empty"
   },
 //   plugins: [
 //   // Simply copies the files over
