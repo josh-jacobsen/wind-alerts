@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Hello from './Hello.jsx'
+import Wind from './WindComponent.jsx'
 import World from './World.jsx'
 
 const hello = "Wind forecast:"
@@ -10,7 +10,7 @@ export default class App extends React.Component {
   render () {
     return (
       <div>
-        <Hello message={hello}/>
+        <Wind message={hello}/>
         <World message={world}/>
       </div>
     )
