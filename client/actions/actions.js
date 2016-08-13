@@ -10,6 +10,8 @@ let city = '2193734'
 
 export const RECEIVE_INITIAL_WIND = 'RECEIVE_INITIAL_WIND'
 export const GETTING_WIND_IN_PROGRESS = 'GETTING_WIND_IN_PROGRESS'
+export const GET_WIND_SUCCESSFUL = 'GET_WIND_SUCCESSFUL'
+
 
 /*
  * other constants
@@ -38,13 +40,19 @@ export const ShowFetchingWindStatus = {
    }
  }
 
+ const getWindSuccessful = () => {
+   return {
+     type: GET_WIND_SUCCESSFUL
+   }
+ }
+
 /*
   * async action creators
 */
 
 export const getInitialWind = () => {
   return (dispatch) => {
-    dispatch(gettingWindInProgress)
+    dispatch(gettingWindInProgress())
     request
       .get(url)
       .query({ APPID: APPID, id: city})
@@ -52,6 +60,7 @@ export const getInitialWind = () => {
         if (err) {
           console.log(err.message);
         }
+        dispatch(getWindSuccessful())
         dispatch(receiveInitialWind(res.body.wind))
       }
     )
