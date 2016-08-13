@@ -4,9 +4,14 @@
 
 Homepage showing current winds for kite-boarding spots in Auckland and a notification service to provide notifications when the winds are good.
 
+## Tech Stack
+
+React for views, Redux to manage state.
+Currently running on `webpack-dev-server`, however that will change once I build out the backend.
+
 ## Code Examples
 
-Code examples will be coming
+Code examples will be coming.
 
 ## Motivation
 
@@ -22,4 +27,4 @@ I keep missing opportunities to get out kiteboarding because I forget to check t
 
 ## Tests
 
-Test examples will be coming
+Test examples will be coming.
