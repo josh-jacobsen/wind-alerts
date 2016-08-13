@@ -21,5 +21,3 @@ ReactDOM.render(
   <App/>,
   document.getElementById('app')
 )
-
-// checking git
