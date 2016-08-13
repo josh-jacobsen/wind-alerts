@@ -8,56 +8,50 @@ let city = '2193734'
  * action types
  */
 
-export const ADD_TODO = 'ADD_TODO'
-export const TOGGLE_TODO = 'TOGGLE_TODO'
-export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER'
+export const RECEIVE_INITIAL_WIND = 'RECEIVE_INITIAL_WIND'
+export const GETTING_WIND_IN_PROGRESS = 'GETTING_WIND_IN_PROGRESS'
 
 /*
  * other constants
  */
 
-export const VisibilityFilters = {
-  SHOW_ALL: 'SHOW_ALL',
+export const ShowFetchingWindStatus = {
+  SHOW_FETCHING: 'SHOW_ALL',
   SHOW_COMPLETED: 'SHOW_COMPLETED',
-  SHOW_ACTIVE: 'SHOW_ACTIVE'
+  SHOW_FAIL: 'SHOW_FAIL'
 }
 
 /*
- * action creators
- */
+  * action creators
+*/
 
-export function addTodo(text) {
-  return { type: ADD_TODO, text }
-}
+ const receiveInitialWind = (wind) => {
+   return {
+     type: RECEIVE_INITIAL_WIND,
+     wind: wind
+   }
+ }
 
-export function toggleTodo(index) {
-  return { type: TOGGLE_TODO, index }
-}
+ const gettingWindInProgress = () => {
+   return {
+     type: GETTING_WIND_IN_PROGRESS
+   }
+ }
 
-export function setVisibilityFilter(filter) {
-  return { type: SET_VISIBILITY_FILTER, filter }
-}
-
-///////////
-
-export const RECEIVE_INITIAL_WIND = 'RECEIVE_INITIAL_WIND'
-
-const receiveInitialWind = (wind) => {
-  return {
-    type: RECEIVE_INITIAL_WIND,
-    wind: wind
-  }
-}
+/*
+  * async action creators
+*/
 
 export const getInitialWind = () => {
   return (dispatch) => {
+    dispatch(gettingWindInProgress)
     request
       .get(url)
       .query({ APPID: APPID, id: city})
-      // .set('APPID', '74087aaf7351be005cd489b6bc60bfd3')
-      // .set('id', '2193734')
-      .end(function(err, res){
-        console.log(res.body.wind)
+      .end((err, res) => {
+        if (err) {
+          console.log(err.message);
+        }
         dispatch(receiveInitialWind(res.body.wind))
       }
     )
