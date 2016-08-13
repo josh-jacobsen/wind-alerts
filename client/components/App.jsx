@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Wind from './WindComponent.jsx'
+import Wind from '../containers/windContainer.js'
 import World from './World.jsx'
 
 const hello = "Wind forecast:"
