@@ -3,15 +3,7 @@ import ReactDOM from 'react-dom'
 
 export default (props) => {
   const wind = props.wind
-  const success = props.status === 'success'
 
-  if (!success) {
-    return (
-      <div>
-      <h4>Loading.....</h4>
-      </div>
-    )
-  } else {
     return (
       <div>
       <h4>Speed: {wind.speed}</h4>
@@ -19,5 +11,5 @@ export default (props) => {
       <h4>Gust: {wind.gust}</h4>
       </div>
     )
-  }
+
 }

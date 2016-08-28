@@ -23,8 +23,9 @@ store.dispatch(getInitialWind())
 ReactDOM.render(
   <Provider store={store}>
     <Router history={hashHistory}>
-      <Route path="/" component={App}/>
-      <Route path="/wind" component={Wind} />
+      <Route path="/" component={App}>
+        <Route path="/wind" component={Wind} />
+      </Route>
     </Router>
   </Provider>,
   document.getElementById('app')

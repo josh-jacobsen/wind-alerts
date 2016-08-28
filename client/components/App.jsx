@@ -7,9 +7,11 @@ export default class App extends React.Component {
   render () {
     return (
       <div>
-        <div>
-          <h5><Link to="/wind">Show Wind</Link></h5>
-        </div>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/wind">Wind</Link></li>
+          <li><Link to="/">About</Link></li>
+        </ul>
         {this.props.children}
       </div>
     )
