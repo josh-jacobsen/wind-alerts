@@ -10,6 +10,7 @@ import todoApp from './reducers/index.js'
 import { getInitialWind } from './actions/actions.js'
 
 import App from './components/App.jsx'
+import Wind from './containers/windContainer.js'
 
 let store = createStore(
   todoApp, compose(
@@ -23,6 +24,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={hashHistory}>
       <Route path="/" component={App}/>
+      <Route path="/wind" component={Wind} />
     </Router>
   </Provider>,
   document.getElementById('app')
