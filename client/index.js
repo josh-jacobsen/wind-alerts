@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware, compose } from 'redux'
+import { Router, Route, hashHistory} from 'react-router'
 
 import todoApp from './reducers/index.js'
 
@@ -20,7 +21,9 @@ store.dispatch(getInitialWind())
 
 ReactDOM.render(
   <Provider store={store}>
-    <App/>
+    <Router history={hashHistory}>
+      <Route path="/" component={App}/>
+    </Router>
   </Provider>,
   document.getElementById('app')
 )
