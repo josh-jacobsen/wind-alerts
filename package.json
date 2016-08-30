@@ -8,7 +8,7 @@
     "build": "webpack",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:dev": "webpack-dev-server --progress --colors --inline --hot",
-    "start:prod": "webpack && node server.js"
+    "start:prod": "webpack && node server/server.js"
   },
   "repository": {
     "type": "git",

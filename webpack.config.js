@@ -5,7 +5,9 @@ var fs = require('fs')
 
 var PATHS = {
   build: path.join(__dirname, 'server', 'static'),
-  html: path.join(__dirname, 'client', 'html')
+  html: path.join(__dirname, 'client', 'html'),
+  css: path.join(__dirname, 'client', 'css')
+
 }
 
 module.exports = {
@@ -28,6 +30,15 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+  // Simply copies the files over
+  new CopyWebpackPlugin([
+    { from: PATHS.html }, // to: output.path
+    { from: PATHS.css } // to: output.path
+  ]),
+  // Avoid publishing files when compilation fails
+  new webpack.NoErrorsPlugin()
+],
   node: {
   fs: "empty"
   },
