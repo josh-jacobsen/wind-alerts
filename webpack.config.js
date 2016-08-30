@@ -1,14 +1,11 @@
 var path = require('path')
 var webpack = require('webpack')
-// var CopyWebpackPlugin = require('copy-webpack-plugin')
+var CopyWebpackPlugin = require('copy-webpack-plugin')
 var fs = require('fs')
 
-
-
-
 var PATHS = {
-  build: path.join(__dirname, 'client', 'static'),
-  // html: path.join(__dirname, 'client', 'html')
+  build: path.join(__dirname, 'server', 'static'),
+  html: path.join(__dirname, 'client', 'html')
 }
 
 module.exports = {
@@ -16,7 +13,7 @@ module.exports = {
   output: {
     path: PATHS.build,
     filename: 'bundle.js',
-    publicPath: '/client/static/'
+    publicPath: '/server/static/'
     /* the publicPath is used by WDS and has to be in string format (instead of PATHS.build), otherwise WDS won't find it */
   },
   module: {
