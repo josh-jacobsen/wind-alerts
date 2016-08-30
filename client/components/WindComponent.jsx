@@ -6,8 +6,7 @@ export default (props) => {
 
     return (
       <div>
-      <h2>Hello world</h2>
-      <h4>Speed: {wind.speed}</h4>
+      <h4 className="fick">Speed: {wind.speed}</h4>
       <h4>Direction (degrees): {wind.deg}</h4>
       <h4>Gust: {wind.gust}</h4>
       </div>
