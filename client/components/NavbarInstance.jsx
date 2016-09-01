@@ -1,5 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router'
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
 const NavbarInstance = React.createClass({
   render () {
@@ -12,9 +14,15 @@ const NavbarInstance = React.createClass({
         </Navbar.Header>
         <Nav>
           <NavDropdown eventKey={3} title="Locations" id="basic-nav-dropdown">
-            <MenuItem eventKey={3.1}>Cheltenham</MenuItem>
+            <LinkContainer to="/wind">
+              <MenuItem eventKey={3.1}>Cheltenham</MenuItem>
+            </LinkContainer>
+            <LinkContainer to="/wind">
             <MenuItem eventKey={3.2}>Takapuna</MenuItem>
+            </LinkContainer>
+            <LinkContainer to="/wind">
             <MenuItem eventKey={3.3}>Shoal Bay</MenuItem>
+            </LinkContainer>
             <MenuItem divider />
             <MenuItem eventKey={3.3}>All locations</MenuItem>
           </NavDropdown>
