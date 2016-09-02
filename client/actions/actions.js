@@ -4,6 +4,7 @@ import { APPID } from '../../api.js'
 
 let url = 'http://api.openweathermap.org/data/2.5/weather'
 let city = '2193734'
+let metric = 'metric'
 /*
  * action types
  */
@@ -55,7 +56,7 @@ export const getInitialWind = () => {
     dispatch(gettingWindInProgress())
     request
       .get(url)
-      .query({ APPID: APPID, id: city})
+      .query({ APPID: APPID, id: city, units: metric})
       .end((err, res) => {
         if (err) {
           console.log(err.message);
