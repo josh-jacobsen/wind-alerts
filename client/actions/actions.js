@@ -27,10 +27,10 @@ export const ShowFetchingWindStatus = {
   * action creators
 */
 
- const receiveInitialWind = (wind) => {
+ const receiveInitialWind = (weather) => {
    return {
      type: RECEIVE_INITIAL_WIND,
-     wind: wind
+     weather: weather
    }
  }
 
@@ -61,7 +61,7 @@ export const getInitialWind = () => {
           console.log(err.message);
         }
         dispatch(getWindSuccessful())
-        dispatch(receiveInitialWind(res.body.wind))
+        dispatch(receiveInitialWind(res.body))
       }
     )
   }

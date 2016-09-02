@@ -4,7 +4,7 @@ import Wind from '../components/WindComponent.jsx'
 
 const mapStateToProps = (state) => {
   return {
-    wind: state.wind,
+    weather: state.weather,
     status: state.status
   }
 }

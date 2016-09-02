@@ -15,10 +15,10 @@ function status (state = '', action ) {
   }
 }
 
-function wind (state = '', action) {
+function weather (state = '', action) {
   switch (action.type) {
     case RECEIVE_INITIAL_WIND:
-      return action.wind
+      return action.weather
 
     default:
       return state
@@ -27,7 +27,7 @@ function wind (state = '', action) {
 
 const todoApp = combineReducers({
   status: status,
-  wind: wind
+  weather: weather
 })
 
 export default todoApp

@@ -2,15 +2,17 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 export default (props) => {
-  const wind = props.wind
+  const weather = props.weather
   const success = props.status === 'success'
 
-  if (success) {
+  if (weather) {
     return (
       <div>
-      <h4 className="fick">Speed: {wind.speed}</h4>
-      <h4>Direction (degrees): {wind.deg}</h4>
-      <h4>Gust: {wind.gust}</h4>
+      <h4>Report current at: {weather.dt}</h4>
+      <h4>Temperature: {weather.main.temp}</h4>
+
+      <h4>Speed: {weather.wind.speed}</h4>
+      <h4>Direction (degrees): {weather.wind.deg}</h4>
       </div>
     )
   } else {
