@@ -11,6 +11,9 @@ import { getInitialWind } from './actions/actions.js'
 
 import App from './components/App.jsx'
 import Wind from './containers/windContainer.js'
+import Site from './components/Site.jsx'
+import Cheltenham from './components/Cheltenham.jsx'
+import ShoalBay from './components/ShoalBay.jsx'
 
 let store = createStore(
   todoApp, compose(
@@ -24,7 +27,12 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={hashHistory}>
       <Route path="/" component={App}>
-        <Route path="/wind" component={Wind} />
+        <Route path="/cheltenham" component={Cheltenham}>
+          <Route path="/cheltenham/wind" component={Wind} />
+          </Route>
+        <Route path="/shoalbay" component={ShoalBay}>
+          <Route path="/shoalbay/wind" component={Wind} />
+        </Route>
       </Route>
     </Router>
   </Provider>,

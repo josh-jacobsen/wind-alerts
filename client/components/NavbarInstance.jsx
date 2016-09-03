@@ -13,14 +13,14 @@ const NavbarInstance = React.createClass({
           </Navbar.Brand>
         </Navbar.Header>
         <Nav>
-          <NavDropdown eventKey={3} title="Locations" id="basic-nav-dropdown">
-            <LinkContainer to="/wind">
+          <NavDropdown eventKey={3} title="Sites" id="basic-nav-dropdown">
+            <LinkContainer to="/cheltenham/wind">
               <MenuItem eventKey={3.1}>Cheltenham</MenuItem>
             </LinkContainer>
-            <LinkContainer to="/wind">
+            <LinkContainer to="/takapuna/wind">
             <MenuItem eventKey={3.2}>Takapuna</MenuItem>
             </LinkContainer>
-            <LinkContainer to="/wind">
+            <LinkContainer to="/shoalbay/wind">
             <MenuItem eventKey={3.3}>Shoal Bay</MenuItem>
             </LinkContainer>
             <MenuItem divider />

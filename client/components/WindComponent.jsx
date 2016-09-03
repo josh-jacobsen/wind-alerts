@@ -18,17 +18,12 @@ export default (props) => {
     var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
 
     return (
-      <Grid>
-        <Row className="show-grid">
-          <Col xs={12} sm={4} md={4} lg={3}><p>All the stuff on the left</p></Col>
-          <Col xs={12} sm={8} md={8} lg={9}>
-              <h4>Report current at: {formattedTime}</h4>
-              <h4>Temperature: {weather.main.temp} degrees Celcius</h4>
-              <h4>Speed: {knots} knots</h4>
-              <h4>Direction: {weather.wind.deg} degrees</h4>
-          </Col>
-        </Row>
-      </Grid>
+      <Col xs={12} sm={8} md={8} lg={9}>
+        <h4>Report current at: {formattedTime}</h4>
+        <h4>Temperature: {weather.main.temp} degrees Celcius</h4>
+        <h4>Speed: {knots} knots</h4>
+        <h4>Direction: {weather.wind.deg} degrees</h4>
+      </Col>
     )
   } else {
     return (
