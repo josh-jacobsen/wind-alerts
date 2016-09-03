@@ -42,6 +42,10 @@ module.exports = {
   node: {
   fs: "empty"
   },
+  devServer: {
+    inline: true,
+    port: 8008
+  },
 //   plugins: [
 //   // Simply copies the files over
 //   new CopyWebpackPlugin([
