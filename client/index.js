@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom'
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware, compose } from 'redux'
-import { Router, Route, hashHistory} from 'react-router'
+import { Router, Route, IndexRoute, hashHistory} from 'react-router'
 
 import todoApp from './reducers/index.js'
 
 import { getInitialWind } from './actions/actions.js'
 
 import App from './components/App.jsx'
+import Home from './components/Home.jsx'
 import Wind from './containers/windContainer.js'
 import Site from './components/Site.jsx'
 import Cheltenham from './components/Cheltenham.jsx'
@@ -27,6 +28,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={hashHistory}>
       <Route path="/" component={App}>
+        <IndexRoute component={Home} />
         <Route path="/cheltenham" component={Cheltenham}>
           <Route path="/cheltenham/wind" component={Wind} />
           </Route>
