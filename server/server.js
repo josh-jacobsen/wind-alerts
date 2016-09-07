@@ -1,9 +1,13 @@
 var express = require('express')
 var path = require('path')
+var dotenv = require('dotenv')
+dotenv.load()
+
 
 var app = express()
 
 var PORT = process.env.PORT || 8080
+var APPID = process.env.APPID
 
 // serve static files such as main.css
 app.use(express.static(path.join(__dirname, '/static')))
